@@ -42,10 +42,8 @@ public class MyListAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        ImageView imageview;
-        TextView tv_title;
-        TextView tv_time;
-        TextView tv_content;
+        public ImageView imageview;
+        public TextView tv_title,tv_time,tv_content;
     }
 
     @Override
@@ -53,6 +51,7 @@ public class MyListAdapter extends BaseAdapter {
         ViewHolder view = null;
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.layout_list_view, null);
+            view = new ViewHolder();
             view.imageview = (ImageView) convertView.findViewById(R.id.iv);
             view.tv_title = (TextView) convertView.findViewById(R.id.tv_title);
             view.tv_time = (TextView) convertView.findViewById(R.id.tv_time);
